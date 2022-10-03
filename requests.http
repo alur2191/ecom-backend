@@ -1,0 +1,57 @@
+@endpoint = https://njaovpicbe.execute-api.us-east-2.amazonaws.com/prod/
+
+GET  {{endpoint}}/order/
+###
+GET  {{endpoint}}/product/
+###
+
+GET {{endpoint}}/orders?orderId=2bb362zo0kq
+###
+
+
+PUT {{endpoint}}/orders?orderId=2bb362zo0kq
+Content-Type: application/json
+
+{
+    "location": "Updated Location"
+}
+###
+
+POST {{endpoint}}/order/
+Content-Type: application/json
+
+{
+    "name": "London",
+    "price": 354654,
+		"quantity": 84784
+}
+###
+
+POST {{endpoint}}/product/
+Content-Type: application/json
+
+
+{
+    "name": "London",
+    "price": 354654,
+		"quantity": 84784
+}
+###
+
+PUT {{endpoint}}/products?productId=rsanw55f93d
+Content-Type: application/json
+
+{
+    "name": "test"
+}
+###
+
+
+PUT {{endpoint}}/order/tracking?orderId=2bb362zo0kq
+Content-Type: application/json
+
+{
+    "trackingNumber": "sfdgsdfgsdfg",
+		"trackingCompany": "fdsgsregsrg"
+}
+###
