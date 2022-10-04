@@ -52,6 +52,6 @@ Content-Type: application/json
 
 {
     "trackingNumber": "sfdgsdfgsdfg",
-		"trackingCompany": "fdsgsregsrg"
+		"trackingCompany": "randomCompany"
 }
 ###

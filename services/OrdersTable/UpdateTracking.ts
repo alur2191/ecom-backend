@@ -1,19 +1,18 @@
 import { DynamoDB } from 'aws-sdk';
 import { APIGatewayProxyEvent, APIGatewayProxyResult, Context } from 'aws-lambda';
-import { getEventBody } from '../Shared/Utils'
-
+import { addCorsHeader, getEventBody } from '../Shared/Utils'
 
 const TABLE_NAME = process.env.TABLE_NAME as string;
 const PRIMARY_KEY = process.env.PRIMARY_KEY as string;
 const dbClient = new DynamoDB.DocumentClient();
 
-async function handler(event: APIGatewayProxyEvent, context: Context): Promise<APIGatewayProxyResult> {
+async function handler(event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> {
 
     const result: APIGatewayProxyResult = {
         statusCode: 200,
-        body: 'Hello from DYnamoDb'
+        body: 'Response'
     }
-
+    addCorsHeader(result)
 		try {
 			const requestBody = getEventBody(event)
 			const orderId = event.queryStringParameters?.[PRIMARY_KEY]
