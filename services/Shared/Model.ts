@@ -12,8 +12,8 @@ export interface Order {
 	price: number,
 }
 
-export interface OrderStatus {
-	status: string
+export interface IOrderStatus {
+  status: "pending" | "success" | "error";
 }
 
 export interface OrderTracking {
